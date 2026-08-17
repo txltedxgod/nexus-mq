@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  nexus-node-1:
+    build: .
+    container_name: nexus-node-1
+    ports:
+      - "8080:8080"
+    volumes:
+      - nexus-data-1:/nexus/data
+    environment:
+      - NODE_ID=nexus-01
+    restart: unless-stopped
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: nexus-prometheus
+    ports:
+      - "9090:9090"
+    command:
+      - --config.file=/etc/prometheus/prometheus.yml
+    volumes:
+      - ./deploy/prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    depends_on:
+      - nexus-node-1
+
+volumes:
+  nexus-data-1:
