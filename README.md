@@ -1,5 +1,18 @@
 # ⚡ NexusMQ
 
+```mermaid
+flowchart LR
+    Producer([Event Producer]) -->|gRPC Stream| Broker[Nexus-MQ Broker Node]
+    Broker --> WAL[(Append-Only Commit Log)]
+    Broker --> Index[(Offset Index & Memory Ring)]
+    
+    Broker --> Coor[Consumer Group Coordinator]
+    Coor --> C1([Consumer Worker 1 - Partition 0])
+    Coor --> C2([Consumer Worker 2 - Partition 1])
+    Coor --> C3([Consumer Worker 3 - Partition 2])
+```
+
+
 [![Go CI](https://github.com/txltedxgod/nexus-mq/actions/workflows/ci.yml/badge.svg)](https://github.com/txltedxgod/nexus-mq/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Go 1.22](https://img.shields.io/badge/go-1.22-00ADD8.svg?logo=go&logoColor=white)](https://golang.org/)
