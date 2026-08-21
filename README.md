@@ -1,5 +1,11 @@
 # ⚡ NexusMQ
 
+[![Go CI](https://github.com/txltedxgod/nexus-mq/actions/workflows/ci.yml/badge.svg)](https://github.com/txltedxgod/nexus-mq/actions)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Go 1.22](https://img.shields.io/badge/go-1.22-00ADD8.svg?logo=go&logoColor=white)](https://golang.org/)
+[![gRPC](https://img.shields.io/badge/gRPC-v1-244c5a.svg)](https://grpc.io/)
+
+
 [![CI](https://github.com/txltedxgod/nexus-mq/actions/workflows/ci.yml/badge.svg)](https://github.com/txltedxgod/nexus-mq/actions)
 [![Go Report Card](https://goreportcard.com/badge/github.com/txltedxgod/nexus-mq)](https://goreportcard.com/report/github.com/txltedxgod/nexus-mq)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
