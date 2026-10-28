@@ -30,7 +30,7 @@ func main() {
 	defaultParts := flag.Int("default-partitions", 4, "Default partitions for auto-created topics")
 	flag.Parse()
 
-	fmt.Println(banner)
+	fmt.Print(banner)
 	log.Printf("[INFO] Initializing NexusMQ node '%s' on %s...", *nodeID, *httpAddr)
 
 	b, err := broker.NewBroker(broker.BrokerConfig{
