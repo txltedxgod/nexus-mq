@@ -13,16 +13,11 @@ flowchart LR
 ```
 
 
-[![Go CI](https://github.com/txltedxgod/nexus-mq/actions/workflows/ci.yml/badge.svg)](https://github.com/txltedxgod/nexus-mq/actions)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Go 1.22](https://img.shields.io/badge/go-1.22-00ADD8.svg?logo=go&logoColor=white)](https://golang.org/)
-[![gRPC](https://img.shields.io/badge/gRPC-v1-244c5a.svg)](https://grpc.io/)
-
-
-[![CI](https://github.com/txltedxgod/nexus-mq/actions/workflows/ci.yml/badge.svg)](https://github.com/txltedxgod/nexus-mq/actions)
-[![Go Report Card](https://goreportcard.com/badge/github.com/txltedxgod/nexus-mq)](https://goreportcard.com/report/github.com/txltedxgod/nexus-mq)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Go CI](https://github.com/txltedxgod/nexus-mq/actions/workflows/ci.yml/badge.svg)](https://github.com/txltedxgod/nexus-mq/actions/workflows/ci.yml)
 [![Go Version](https://img.shields.io/badge/Go-1.22+-00ADD8?logo=go)](https://go.dev/)
+[![Go Report Card](https://goreportcard.com/badge/github.com/txltedxgod/nexus-mq)](https://goreportcard.com/report/github.com/txltedxgod/nexus-mq)
+[![gRPC](https://img.shields.io/badge/gRPC-v1-244c5a.svg)](https://grpc.io/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 **NexusMQ** is a high-throughput, distributed event-streaming engine and lightweight commit-log message broker engineered in Go. It delivers low-latency persistence, dynamic partition sharding, consumer group coordination, and a built-in real-time monitoring dashboard.
 
@@ -48,6 +43,16 @@ flowchart LR
                                               │
                                    [Web Dashboard & Prometheus]
 ```
+
+---
+
+## 📺 Live Terminal Demo
+
+<p align="center">
+  <img src="assets/demo.gif" alt="NexusMQ Broker and Stream Benchmark Demo" width="780" />
+</p>
+
+---
 
 - **Segmented Commit Log with Sparse Indexing:** High-speed sequential write throughput with zero-overhead binary index lookups.
 - **Dynamic Partitioning & Hash Sharding:** Distribute high-volume streams across configurable partition pools.
