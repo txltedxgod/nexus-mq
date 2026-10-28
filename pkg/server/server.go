@@ -293,13 +293,13 @@ const dashboardHTML = `<!DOCTYPE html>
                 body.innerHTML = topics.map(t => {
                     const totalOffset = t.partitions.reduce((acc, p) => acc + p.latest_offset, 0);
                     const totalSegs = t.partitions.reduce((acc, p) => acc + p.segments, 0);
-                    return `<tr>
-                        <td><strong>${t.topic}</strong></td>
-                        <td><span class="tag">${t.partitions.length} partitions</span></td>
-                        <td>${totalOffset}</td>
-                        <td>${totalSegs}</td>
-                        <td><span class="tag">ACTIVE</span></td>
-                    </tr>`;
+                    return '<tr>' +
+                        '<td><strong>' + t.topic + '</strong></td>' +
+                        '<td><span class="tag">' + t.partitions.length + ' partitions</span></td>' +
+                        '<td>' + totalOffset + '</td>' +
+                        '<td>' + totalSegs + '</td>' +
+                        '<td><span class="tag">ACTIVE</span></td>' +
+                    '</tr>';
                 }).join('');
             } catch (e) {
                 console.error(e);

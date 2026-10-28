@@ -3,6 +3,7 @@ package proto
 import (
 	"encoding/binary"
 	"hash/crc32"
+	"sort"
 	"time"
 )
 
@@ -36,9 +37,16 @@ func (m *Message) ComputeCRC() uint32 {
 	h.Write(b[:])
 	h.Write(m.Key)
 	h.Write(m.Value)
-	for k, v := range m.Headers {
-		h.Write([]byte(k))
-		h.Write([]byte(v))
+	if len(m.Headers) > 0 {
+		keys := make([]string, 0, len(m.Headers))
+		for k := range m.Headers {
+			keys = append(keys, k)
+		}
+		sort.Strings(keys)
+		for _, k := range keys {
+			h.Write([]byte(k))
+			h.Write([]byte(m.Headers[k]))
+		}
 	}
 	return h.Sum32()
 }
